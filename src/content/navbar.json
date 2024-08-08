@@ -1,0 +1,20 @@
+[
+	{
+		"url": "/",
+		"title": "ABOUT ME"
+	},
+	{
+		"url": "/docs",
+		"title": "PROJECTS"
+	},
+	{
+		"url": "/articles",
+		"title": "SKILLS"
+	},
+	{
+		"url": "/projects",
+		"title": "CONTACT"
+	}
+
+
+]

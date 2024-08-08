@@ -1,0 +1,19 @@
+{
+	"intro": {
+		"start": "const myName = () =>",
+		"end": "Hey there!, my name is",
+		"speed": 60,
+		"deletionSpeed": 80,
+		"wrapper": "h2",
+		"startDelay": 1000,
+		"deleteDelay": 3000,
+		"restartDelay": 12000
+	},
+
+	"header": {
+		"name": "Etienne GEORGIOU",
+		"usp": "Full Stack Developer."
+	},
+
+	"paragraph": "Node.js | Next.js | React.js | NestJS | Python"
+}

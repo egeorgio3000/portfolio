@@ -1,0 +1,75 @@
+[
+	{
+		"project": "Innovation Profiler",
+		"repo": "Private",
+		"descriptionTitle": "A full-stack Saas application",
+		"description": "implemented in Node.js, this web application is a multiple-choice questionnaire that includes various types of questions to identify innovator profiles. It is accessible at https://innovationprofiler.com. Data from the test is saved (PostgreSQL), and a script for comparative analysis of user data is implemented (Python).",
+		"imageOptions": [
+		],
+		"images": [
+			{ "key": "mock-stack",	"hover": "right", 	"h": "300", "w": "300", "url": "/img/logly.png" }
+
+		],
+		"stack": [
+			{ "key": "nodejs", 		"name": "Node.js", 		"type": "devicon" },
+			{ "key": "nextjs", 		"name": "Next.js", 		"type": "devicon" },
+			{ "key": "react", 		"name": "React", 		"type": "devicon" },
+			{ "key": "typescript", 	"name": "Typescript", 	"type": "devicon" },
+			{ "key": "nestjs", 	"name": "Nest.js", 	"type": "devicon" },
+			{ "key": "postgresql", 	"name": "PostgreSQL", 	"type": "devicon" },
+			{ "key": "python", "name": "Python", "type": "devicon" },
+			{ "key": "pandas", "name": "Pandas", "type": "devicon" },
+			{ "key": "googlecloud", "name": "OVH", "type": "devicon" },
+			{ "key": "docker", "name": "Docker", "type": "devicon" },
+			{ "key": "nginx", "name": "Nginx", "type": "devicon" }
+			
+
+
+		]
+
+	},
+	{
+		"project": "Free Lab Games",
+		"repo": "Private",
+		"descriptionTitle": "A Next.js frontend application",
+		"description": "which is a multi-game platform implemented in order to promote the opening of a new Free store. For the occasion I designed a party-game in GodotScript that is the main game of the platform.",
+		"imageOptions": [
+			{ "key": "size", 		"value": "large" }
+		],
+		"images": [
+			{ "key": "portfolio", "hover": "left", "h": "550", "w": "330",  "url": "/img/img-mock.png" }
+		],
+		"stack": [
+			{ "key": "nodejs", 		"name": "Node.js", 		"type": "devicon" },
+			{ "key": "nextjs", 		"name": "Next.js", 		"type": "devicon" },
+			{ "key": "javascript", 	"name": "JavaScript", 	"type": "devicon" },
+			{ "key": "typescript", 	"name": "Typescript", 	"type": "devicon" },
+			{"key": "godot", "name": "GodotScript", "type": "devicon"},
+			{"key": "tailwindcss", "name": "Tailwind", "type": "devicon"}
+
+		]
+	},
+
+	{
+		"project": "Transcendance",
+		"repo": "Private",
+		"descriptionTitle": "The final 42 school project",
+		"description": "is a fullstack application in React and NestJS that allow users to play a real-time multiplayer Pong game (with smooth and responsive experience) and communicate in a chat through websockets",
+		"imageOptions": [
+			{ "key": "size", 		"value": "large" }
+		],
+		"images": [
+			{ "key": "portfolio", "hover": "left", "h": "550", "w": "330",  "url": "/img/img-mock.png" }
+		],
+		"stack": [
+			{ "key": "nodejs", 		"name": "Node.js", 		"type": "devicon" },
+			{ "key": "react", 		"name": "React", 		"type": "devicon" },
+			{ "key": "nestjs", 		"name": "NestJS", 		"type": "devicon" },
+			{ "key": "typescript", 	"name": "Typescript", 	"type": "devicon" },
+			{"key": "postgresql", "name": "PostgreSQL", "type": "devicon"},
+			{"key": "nginx", "name": "Nginx", "type": "devicon"},
+			{"key": "docker", "name": "Docker", "type": "devicon"}
+
+		]
+	}
+]

@@ -1,0 +1,17 @@
+{
+
+	"social": [
+		{
+			"url": "https://dev.to/muhammadfiaz",
+			"icon": "envelope"
+		},
+		{
+			"url": "https://www.linkedin.com/in/etienne-georgiou/",
+			"icon": "linkedin"
+		},
+		{
+			"url": "https://github.com/egeorgio3000",
+			"icon": "github"
+		}
+	]
+}
