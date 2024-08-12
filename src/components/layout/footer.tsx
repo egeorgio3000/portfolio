@@ -20,12 +20,13 @@ export default function Footer(): JSX.Element {
 						<li>
 							<h4>Social</h4>
 						</li>
-						<li className={css.socialList}>
+						<li className="flex flex-col">
 							{content.social.map(({ url, icon }, index) => {
 								return (
-									<a key={index} href={url} rel="noreferrer" target="_blank">
-										<Icon icon={['fab', icon] as any} /> 
-									</a>
+									// <a key={index} href={url} rel="noreferrer" target="_blank">
+									// 	<Icon icon={['fab', icon] as any} /> 
+									// </a>
+									<a key={index} href={url} className="my-2">{icon}</a>
 								);
 							})}
 						</li>

@@ -1,17 +1,21 @@
 {
 
 	"social": [
+
 		{
-			"url": "https://dev.to/muhammadfiaz",
-			"icon": "envelope"
+			"url": "mailto:etienne.georgiou@gmail.com",
+			"icon": "CONTACT"
 		},
 		{
 			"url": "https://www.linkedin.com/in/etienne-georgiou/",
-			"icon": "linkedin"
+			"icon": "LINKEDIN"
 		},
 		{
 			"url": "https://github.com/egeorgio3000",
-			"icon": "github"
+			"icon": "GITHUB"
 		}
 	]
 }
+
+
+

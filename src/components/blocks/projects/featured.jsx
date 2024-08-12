@@ -30,7 +30,7 @@ export default function FeaturedProject({ content }, index) {
 			key={index}
 			// className={css.project} 
 			className='flex'
-			framer-motion
+			framer-motion="true"
 			ref={ref}
 			variants={container}
 			initial={[ "rest", "hidden" ]}

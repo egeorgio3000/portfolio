@@ -34,7 +34,7 @@ const Carousel = () => {
           transition={{ duration: 0.5 }}
           className="absolute top-0 left-0 w-full h-full"
         >
-          <Image src={images[index]} alt={`Image ${index}`} layout="fill" objectFit="cover" />
+          <Image src={images[index]} alt={`Image ${index}`} fill={true} style={{objectFit: "cover"}} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
         </motion.div>
       </AnimatePresence>
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">

@@ -17,7 +17,7 @@ export default function Document() {
                 <meta charSet="utf-8"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
                 {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
-                <title>Etienne GEORGIOU</title>
+                {/* <title>Etienne GEORGIOU</title> */}
                 <meta name="description"
                       content="Etienne GEORGIOU - A full-stack Node.js web developer"/>
             </Head>

@@ -1,4 +1,4 @@
-
+'use client'
 import React, {useEffect, useState} from 'react';
 import {IconName, IconPrefix, library} from '@fortawesome/fontawesome-svg-core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -16,9 +16,19 @@ interface IconProps {
 	icon: [IconPrefix, IconName];
 }
 
+const validIcons: { [key in IconPrefix]?: IconName } = {
+	fas: 'circle-notch',
+	fat: 'circle-notch',
+	fal: 'circle-notch',
+	fad: 'circle-notch',
+	far: 'circle-notch',
+	fab: 'github', // 'circle-notch' does not exist in fab
+  };
+
 const Icon: React.FC<IconProps> = ({ icon }) => {
 	const [iconType, iconKey] = icon;
-	const [stateIconKey, setIconKey] = useState<IconName>('circle-notch');
+	const defaultIconKey = validIcons[iconType] || 'circle-notch';
+	const [stateIconKey, setIconKey] = useState<IconName>(defaultIconKey);
 
 	useEffect(() => {
 		setIconKey(iconKey as IconName);
