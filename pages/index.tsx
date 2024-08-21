@@ -15,6 +15,7 @@ const FeaturedProjects = dynamic(() => import('../src/components/sections/projec
 const Color = dynamic(() => import('../src/components/utils/page.colors'));
 import settings from '../src/content/_settings.json';
 import GithubGraphSection from "../src/components/sections/index/github.graph";
+import { useScroll } from '../hooks/ScrollContext';
 
 interface HomePageProps {
 	spacing: string[];
@@ -23,7 +24,7 @@ interface HomePageProps {
 export default function HomePage({ spacing }: HomePageProps) {
 	// Use a state variable to track whether components are loaded
 	const [componentsLoaded, setComponentsLoaded] = useState(false);
-
+	const {scrollRef} = useScroll();
 	// Simulate a loading delay
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -34,14 +35,14 @@ export default function HomePage({ spacing }: HomePageProps) {
 	}, []);
 
 	const renderContent = () => (
-		<div>
+		<div ref={scrollRef}>
 			<Hero />
 			{/* <Looking /> */}
-			<About />
+			<div id="ABOUTME"><About /></div>
 			{/* <GithubGraphSection/> */}
 
-			<FeaturedProjects />
-			<Technical />
+			<div id="PROJECTS"><FeaturedProjects /></div>
+			<div id="SKILLS"><Technical /></div>
 			{/*	<TimeLine/> -> Still In Development*/}
 			{/* <Career /> */}
 		</div>

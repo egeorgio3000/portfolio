@@ -37,7 +37,7 @@ export default function Navbar() {
 	// Initialize router and state variables
 	const router = useRouter();
 	const [menuState, menuToggle] = useState<boolean | undefined>();
-	// const { scrollToElement } = useScroll();
+	const { scrollToElement } = useScroll();
 	// useEffect: Set the initial menu state to false
 	useEffect(() => {
 		menuToggle(false);
@@ -170,6 +170,20 @@ export default function Navbar() {
 		};
 	}, []);
 
+	const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+	
+	const scrollToBottom = () => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth',
+        });
+    };
+
 	// Function to toggle the menu state
 	const toggleMenu = () => {
 		let bool = !menuState;
@@ -182,7 +196,7 @@ export default function Navbar() {
 			<ul className={css.menu}>
 				<li className={css.menuHeader}>
 					<div className={css.indexButton}>
-						<p>{settings.name}</p>
+						<p onClick={scrollToTop}>{settings.name}</p>
 					</div>
 					<button onClick={toggleMenu} className={css.mobileToggle} data-open={menuState}>
 						<div>
@@ -197,7 +211,11 @@ export default function Navbar() {
 							return (
 								<li key={index}>
 									<div className={css.indexButton}>
-										<p>{title}</p>
+										<p onClick={() => {
+											title === 'CONTACT' ? 
+											scrollToBottom() : 
+											scrollToElement('#' + title.replace(/ /g, ''));
+										}}>{title}</p>
 									</div>
 								</li>
 							);

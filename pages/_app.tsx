@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useEffect, useState} from 'react';
 import {Router} from 'next/router';
 import NProgress from 'nprogress';
@@ -82,7 +84,7 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
                 <LoadingScreen />
             ) : (
                 <LazyMotion features={domAnimation}>
-                    {/* <ScrollProvider> */}
+                    <ScrollProvider>
                         <Layout>
                             <Component {...pageProps} />
                             {/* <DevelopmentNotice /> */}
@@ -91,7 +93,7 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
                             <Analytics />
                             <SetGridGap />
                         </Layout>
-                    {/* </ScrollProvider> */}
+                    </ScrollProvider>
                     <BackToTop />
                 </LazyMotion>
             )}
