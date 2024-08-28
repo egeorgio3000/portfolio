@@ -59,7 +59,7 @@ interface MyAppProps extends AppProps{
 }
 
 const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         // Check if splashscreen is enabled in settings
@@ -89,8 +89,8 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
                             <Component {...pageProps} />
                             {/* <DevelopmentNotice /> */}
                             {/* <Chatbot /> */}
-                            <SpeedInsights/>
-                            <Analytics />
+                            {/* <SpeedInsights/> */}
+                            {/* <Analytics /> */}
                             <SetGridGap />
                         </Layout>
                     </ScrollProvider>

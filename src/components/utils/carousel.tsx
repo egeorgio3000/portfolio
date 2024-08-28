@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
-const images = [
-  "/IP-img/IP1.png",
-  "/IP-img/IP2.png",
-  "/IP-img/IP3.png"
-];
 
-const Carousel = () => {
+
+const Carousel = ({project}: {project: string}) => {
   const [index, setIndex] = useState(0);
-
+  const images = [
+    `/${project === 'Innovation Profiler' ? 'IP-img' : 'FLG-img'}/IP1.png`,
+    `/${project === 'Innovation Profiler' ? 'IP-img' : 'FLG-img'}/IP2.png`,
+    `/${project === 'Innovation Profiler' ? 'IP-img' : 'FLG-img'}/IP3.png`
+  ];
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);

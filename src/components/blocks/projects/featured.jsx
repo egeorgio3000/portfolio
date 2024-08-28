@@ -12,7 +12,7 @@ import css from '../../../styles/scss/sections/projects/featured.module.scss'
 
 export default function FeaturedProject({ content }, index) {
 
-	const { project, url, repo, descriptionTitle,description, stack, imageOptions, images } = content
+	const { project, descriptionTitle,description, stack } = content
 
 	const controls = useAnimation();
 	const { ref, inView  } = useInView({
@@ -51,8 +51,13 @@ export default function FeaturedProject({ content }, index) {
 				</div>
 			</div>
 			<div className={"p-[2rem]"}  style={{maxWidth: "60%"}}>
-				{/* <Image src={"/IP-img/IP1.png"} alt="IP1" height={500} width={500} loading='eager' /> */}
-				<Carousel />
+				{
+					project === 'Transcendance' ? 
+					<div className="relative w-[500px] h-[500px] overflow-hidden">
+						<Image src={'/T-img/transcendance.png'} alt={`Image transcendance`} fill={true} style={{objectFit: "cover"}} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
+					</div> :
+					<Carousel project={project}/>
+				}
 			</div>
 		</m.section>
 	)

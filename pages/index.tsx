@@ -16,33 +16,47 @@ const Color = dynamic(() => import('../src/components/utils/page.colors'));
 import settings from '../src/content/_settings.json';
 import GithubGraphSection from "../src/components/sections/index/github.graph";
 import { useScroll } from '../hooks/ScrollContext';
-
 interface HomePageProps {
 	spacing: string[];
 }
 
 export default function HomePage({ spacing }: HomePageProps) {
 	// Use a state variable to track whether components are loaded
-	const [componentsLoaded, setComponentsLoaded] = useState(false);
+	const [componentsLoaded, setComponentsLoaded] = useState({
+        hero: false,
+        about: false,
+        projects: false,
+        skills: false,
+		all: false
+    });
 	const {scrollRef} = useScroll();
-	// Simulate a loading delay
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setComponentsLoaded(true);
-		}, 2000);
+	// useEffect(() => {
+	// 	const timer = setTimeout(() => {
+	// 		setComponentsLoaded(true);
+	// 	}, 2000);
 
-		return () => clearTimeout(timer);
-	}, []);
+	// 	return () => clearTimeout(timer);
+	// }, []);
+	useEffect(() => {
+        const allLoaded = Object.values(componentsLoaded).slice(0, 4).every(Boolean);
+        if (allLoaded) {
+            setTimeout(() => {
+                setComponentsLoaded((prev) => ({ ...prev, all: true }));
+            }, 1000); // Optional delay to keep the loading screen for a bit
+        }
+    }, [componentsLoaded]);
+
+
 
 	const renderContent = () => (
 		<div ref={scrollRef}>
-			<Hero />
+			<Hero onLoad={() => setComponentsLoaded((prev) => ({ ...prev, hero: true }))}/>
 			{/* <Looking /> */}
-			<div id="ABOUTME"><About /></div>
+			<div id="ABOUTME"><About onLoad={() => setComponentsLoaded((prev) => ({ ...prev, about: true }))}/></div>
 			{/* <GithubGraphSection/> */}
 
-			<div id="PROJECTS"><FeaturedProjects /></div>
-			<div id="SKILLS"><Technical /></div>
+			<div id="PROJECTS"><FeaturedProjects onLoad={() => setComponentsLoaded((prev) => ({ ...prev, projects: true }))}/></div>
+			<div id="SKILLS"><Technical onLoad={() => setComponentsLoaded((prev) => ({ ...prev, skills: true }))}/></div>
 			{/*	<TimeLine/> -> Still In Development*/}
 			{/* <Career /> */}
 		</div>
@@ -54,10 +68,20 @@ export default function HomePage({ spacing }: HomePageProps) {
 			<Color colors={colors} />
 
 			{/* Conditionally render components or loading message */}
-			{settings.splashscreen && !componentsLoaded ? (
-				<LoadingAnim />
-			) : (
-				renderContent()
+			{renderContent()}
+			{!componentsLoaded.all && (
+				<div style={{
+						position: "fixed",
+						top: 0,
+						left: 0,
+						width: "100%",
+						height: "100%",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						backgroundColor: "black",
+						zIndex: 1000
+					}}><LoadingAnim /></div>
 			)}
 		</div>
 	);

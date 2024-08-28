@@ -10,9 +10,10 @@ import SectionTitle from '../../blocks/section.title'
 import CopyBlock from '../../blocks/about.copy'
 
 import about from '../../../styles/scss/sections/index/about.module.scss';
-import React from "react";
+import React, { useEffect } from "react";
 
-export default function Home() {
+export default function Home({onLoad} : {onLoad: () => void}) {
+	useEffect(() => onLoad(), []);
 	return (
 		<Section classProp={about.section}>
 			<Container spacing={['verticalXXXLrg']}>

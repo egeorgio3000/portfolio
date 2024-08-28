@@ -14,9 +14,11 @@ import BadgesBlock from '../../blocks/about.badges'
 
 // Section scss
 import technical from '../../../styles/scss/sections/index/about.module.scss'
+import { useEffect } from 'react';
 
 
-export default function Technical() {
+export default function Technical({onLoad}: {onLoad: () => void}) {
+	useEffect(() => onLoad(), []);
 	return (
 		<Section classProp={`${technical.section} borderBottom`}>
 			<Container spacing={['verticalXXXLrg']}>

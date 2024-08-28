@@ -9,10 +9,11 @@ import SectionTitle from '../../blocks/section.title'
 
 import css from '../../../styles/scss/sections/projects/featured.module.scss'
 import content from '../../../content/projects/featured.json'
+import { useEffect } from 'react';
 
 {/* Featured Projects */}
-export default function FeaturedProjects() {
-
+export default function FeaturedProjects({onLoad}) {
+	useEffect(() => onLoad(), [])
 	return (
 		<Section classProp={css.hasBg}>	
 			<Container spacing={'verticalXXXXLrg'}>

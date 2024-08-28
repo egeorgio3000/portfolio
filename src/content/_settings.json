@@ -1,7 +1,7 @@
 {
 	"name": "Etienne GEORGIOU",
 	"logo": "",
-	"splashscreen": true,
+	"splashscreen": false,
 
 	"autoupdatecheck": true,
 	"version": "1.0.6",

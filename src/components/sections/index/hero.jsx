@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 import Section from '../../structure/section';
@@ -13,9 +13,11 @@ import hero from '../../../styles/scss/sections/index/hero.module.scss';
 
 import content from '../../../content/index/hero.json';
 
-export default function Hero() {
+export default function Hero({onLoad}) {
 	const [, setTypingStatus] = useState('Initializing');
-
+	useEffect(() => {
+		onLoad();
+	}, []);
 	return (
 		<Section classProp={`${hero.section}`}>
 			<Container spacing={'VerticalXXXL'}>
